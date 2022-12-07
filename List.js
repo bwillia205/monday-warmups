@@ -3,9 +3,9 @@ class List {
         this.head = null
         this.tail = null
     }
-    push(value){
-        const node = new Node(value);
-        // node.next = 
+    push(node){
+        node.next = this.head;
+        this.head = node;
     }
 
 }
@@ -14,8 +14,25 @@ class Node {
         this.value = value;
         this.next = null
     }
-
 }
-const node0 = new Node(4);
-const node1 = new Node(5);
-node0.next = node1;
+
+
+module.exports = {
+    List,
+    Node
+};
+
+
+// const list = new List();
+// const node1 = new Node(1);
+// const node2 = new Node(2);
+// const node3 = new Node(3);
+// list.push(node1);
+// list.push(node2);
+// list.push(node3);
+// console.log(list);
+
+// SOLID principles
+// Single responsibility principle
+// Open/Closed - Open to extension but closed to modification
+
