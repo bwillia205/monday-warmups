@@ -21,8 +21,20 @@ class List {
         this.tail.next = node;
         this.tail = node;
     }
-    insertAfter(node, position){
-        
+    insertAfter(node, target){
+        let current = this.head;
+        while(current !== null){
+            if(current === target){
+                if(this.tail === target){
+                    this.tail = node;
+                }
+                node.next = target.next
+                target.next = node;
+                return;
+            }
+            current = current.next;
+        }
+        //TODO - throw an error if function doesn't return
     }
 
 }
