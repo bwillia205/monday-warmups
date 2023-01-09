@@ -1,23 +1,28 @@
 class List {
     constructor(){
-        this.head = null
+        this.head = null;
+        this.tail = null;
     }
     push(node){
+        const emptyList = !this.head;
+        if(emptyList){
+            this.head = node;
+            this.tail = node;
+            return;
+        }
         node.next = this.head;
         this.head = node;
     }
     append(node){
         const emptyList = !this.head;
         if(emptyList){
-            this.head = node;
-            return;
+            this.push(node);
         }
-        let current = this.head;
-        const currentNextNodeIsEmpty = current.next === null;
-        while(!currentNextNodeIsEmpty){
-            current = current.next;
-        }
-        current.next = node;
+        this.tail.next = node;
+        this.tail = node;
+    }
+    insertAfter(node, position){
+        
     }
 
 }
@@ -28,7 +33,7 @@ class Node {
     }
 }
 
-module.exports = {
+export {
     List,
     Node
 };
