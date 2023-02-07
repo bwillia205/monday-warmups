@@ -13,6 +13,20 @@ class List {
         node.next = this.head;
         this.head = node;
     }
+    pop(){
+        const emptyList = !this.head;
+        if(emptyList){
+            return null;
+        }
+        const node = this.head;
+        const onlyOneNode = this.tail === this.head;
+        if(onlyOneNode){
+            this.tail = null;
+        }
+        this.head = this.head.next;
+        return node;
+    }
+    
     append(node){
         const emptyList = !this.head;
         if(emptyList){

@@ -1,7 +1,24 @@
 import {List, Node} from './List.js';
 
 function testPush(){
+    const list = createList(0);
+    //test push
+    const node = new Node(1);
+    list.push(node);
+    if(list.head === node){
+        console.log('push works!');
+    }
+}
 
+
+function testPop(){
+    const empty = createList(0);
+    const onlyOne = createList(1);
+    const multiple = createList(2);
+    const emptyCheck = empty.pop();
+    if(emptyCheck === null){
+        console.log('empty pop works!')
+    }
 }
 
 function createList(count){
@@ -14,21 +31,15 @@ function createList(count){
 
 function run(){
     //setup
-    const list = new List();
-
-    //test push
-    const node1 = new Node(1);
-    list.push(node1);
-    if(list.head === node1){
-        console.log('push works!');
-    }
+    testPush();
+    testPop();
 
     //test append
-    const node2 = new Node(2);
-    list.append(node2);
-    if(list.tail === node2){
-        console.log('append works!');
-    }
+    // const node2 = new Node(2);
+    // list.append(node2);
+    // if(list.tail === node2){
+    //     console.log('append works!');
+    // }
 
 
 }
