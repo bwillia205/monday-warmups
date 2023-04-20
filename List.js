@@ -26,14 +26,37 @@ class List {
         this.head = this.head.next;
         return node;
     }
-    
     append(node){
         const emptyList = !this.head;
         if(emptyList){
             this.push(node);
+            return;
         }
         this.tail.next = node;
         this.tail = node;
+    }
+    trim(){
+        const emptyList = !this.head;
+        if(emptyList){
+            return null;
+        }
+        const node = this.tail;
+
+        const onlyOneNode = this.tail === this.head;
+        if(onlyOneNode){
+            this.tail = null;
+            this.head = null;
+            return node;
+        }
+
+        let current = this.head;
+        while(current.next !== this.tail){
+            current = current.next;
+        }
+        current.next = null;
+        this.tail = current;
+        return node;
+
     }
     insertAfter(node, target){
         let current = this.head;
