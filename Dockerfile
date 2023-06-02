@@ -3,10 +3,10 @@ FROM node:18.13-alpine AS base
 RUN mkdir /app
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
+COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY List.js routes.js server.js /app/
+COPY dist/ ./
 
 ENV PORT 8000
 CMD node server
