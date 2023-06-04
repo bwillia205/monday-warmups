@@ -180,3 +180,7 @@ git checkout ts/completed-project warm-ups/intro-to-typescript.md
 ```
 
 > If you have gotten behind or stuck or simply want to compare you can checkout the `ts/completed-project` branch or ([stackblitz](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/completed-project)) to get caught up. Do the necessary git commands to get your code to the same state as the branch.
+
+## Completed Project
+
+Today we had a brief overview of TypeScript, updated our project tooling to support TypeScript development, walked through the process of converting JavaScript to TypeScript, learned about TypeScript generics, as well as how TypeScript can change how we build and package our code. There are many more aspects to TypeScript that we didn't cover today, but hopefully this will give you a good starting point to start using TypeScript.
