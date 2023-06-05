@@ -1,6 +1,8 @@
 {
     "type": "commonjs",
     "scripts": {
+        "start": "ts-node src/server.ts",
+        "test": "ts-node src/List.test.ts",
         "build": "tsc"
     },
     "dependencies": {
