@@ -10,10 +10,12 @@ TypeScript is a superset of JavaScript that adds type annotations and other feat
 
 We will go over the basics of TypeScript and project setup and then convert our Linked List to TypeScript. The intention is that you will follow along making changes as we go and convert your own project. If you get stuck, show up late, or fall behind, each section has a branch that you can checkout to get caught up, or verify your work.
 
+> The branch is the start of the section before the direction for that section have been completed. For example, the `ts/converting-project` branch has all the steps in the project setup section completed, but none of the steps in the converting project section.
+
 | Section                                                     | Time     | Branch                 | Stackblitz                                                                                                 |
 | ----------------------------------------------------------- | -------- | ---------------------- | ---------------------------------------------------------------------------------------------------------- |
 | [Introduction](#introduction-to-typescript)                 | 5 min    | ts/main                | [ts/main](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/main)                               |
-| [Project Setup](#project-setup)                             | 5-10 min | ts/project-setup       | [ts/project-setup](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/project-setup)             |
+| [Project Setup](#project-setup)                             | 5-10 min | ts/main                | [ts/main](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/main)                               |
 | [Converting a project](#converting-a-project-to-typescript) | 30 min   | ts/converting-project  | [ts/converting-project](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/converting-project)   |
 | [Typescript Generics](#typescript-generics)                 | 10 min   | ts/typescript-generics | [ts/typescript-generics](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/typescript-generics) |
 | \* [Update Docker](#update-docker)                          | 5 min    | ts/update-docker       | [ts/update-docker](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/update-docker)             |
@@ -31,25 +33,19 @@ Typescript requires a little bit of setup to get started. We will be using node 
     npm install typescript
     ```
 
-2. Install ts-node
-
-    ```bash
-    npm install -D ts-node
-    ```
-
-3. Add tsconfig.json to the project.
+2. Add tsconfig.json to the project.
 
     ```bash
     npx tsc --init
     ```
 
-4. Update tsconfig to match best practices for node and express projects
+3. Update tsconfig to match best practices for node and express projects
 
     ```json
     {
         "compilerOptions": {
             "target": "ES2022",
-            "module": "commonjs",
+            "module": "CommonJS",
             "types": ["node", "express"],
             "outDir": "./dist",
             "rootDir": "./src",
@@ -66,7 +62,7 @@ Typescript requires a little bit of setup to get started. We will be using node 
     }
     ```
 
-5. Update `package.json` `type` property to `commonjs`. The benefits that module the module type provides in JavaScript are less prevalent when using TypeScript, and also has some less than intuitive behavior when it comes to importing files requiring a `.js` extension even thought the file is a `.ts` file.
+4. Update `package.json` `type` property to `commonjs`. The benefits that module the module type provides in JavaScript are less prevalent when using TypeScript, and also has some less than intuitive behavior when it comes to importing files requiring a `.js` extension even thought the file is a `.ts` file.
 
     ```json
     {
@@ -76,7 +72,7 @@ Typescript requires a little bit of setup to get started. We will be using node 
 
     > NOTE: I did not spend a lot of time playing with module vs commonjs, I went with commonjs because most of our day to day code uses commonjs and I wanted to keep things consistent.
 
-6. Create a test typescript file to see if our configuration is working. Add a test.ts file to the src folder and run it.
+5. Create a test typescript file to see if our configuration is working. Add a test.ts file to the src folder and run it.
 
     ```typescript
     // src/test.ts
@@ -84,9 +80,7 @@ Typescript requires a little bit of setup to get started. We will be using node 
     console.log(hello);
     ```
 
-    > Hint: we installed a dependency that will allow us to run this file without compiling it first.
-
-7. Add a script to our package.json to allow us to build the project.
+6. Add a script to our package.json to allow us to build the project.
 
     ```json
     {
@@ -98,7 +92,15 @@ Typescript requires a little bit of setup to get started. We will be using node 
 
     Test the build script by running `npm run build` and then inspect the output at `dist/test.js` and you can run the file by running `node dist/test.js`
 
-8. Instead of running build every time we can use a `ts-node` to run the TypeScript directly.
+7. Instead of running build every time we can use a `ts-node` to run the TypeScript directly.
+
+    Install the `ts-node` dependency`
+
+    ```bash
+    npm install -D ts-node
+    ```
+
+    Use ts-node similar to node to run the file
 
     ```bash
     ts-node src/test.ts
