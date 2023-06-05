@@ -165,3 +165,18 @@ git checkout ts/update-docker warm-ups/intro-to-typescript.md
 ```
 
 > If you have gotten behind or stuck or simply want to compare you can checkout the `ts/update-docker` branch or ([stackblitz](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/update-docker)) to get caught up. Do the necessary git commands to get your code to the same state as the branch.
+
+## Update Docker
+
+Since we have updated to TypeScript and now have a dist directory we need to update our Dockerfile to reflect the changes.
+
+1. Open the Dockerfile and look at what it is copying and where it is copying it from update the commands to make sure that the correct files are copied. Try to build and run the docker image and see if it works
+2. Did we forget anything? does it work? If not try to figure out what is wrong and fix it.
+
+If you have followed along checkout the next section of instructions by running:
+
+```bash
+git checkout ts/completed-project warm-ups/intro-to-typescript.md
+```
+
+> If you have gotten behind or stuck or simply want to compare you can checkout the `ts/completed-project` branch or ([stackblitz](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/completed-project)) to get caught up. Do the necessary git commands to get your code to the same state as the branch.
