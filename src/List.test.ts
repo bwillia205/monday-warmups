@@ -70,7 +70,7 @@ function testPop() {
 }
 
 function createList(count: number) {
-    let list = new List();
+    let list = new List<number>();
     for (let i = 0; i < count; i++) {
         list.append(new Node(i));
     }
@@ -89,5 +89,17 @@ function run() {
     // if(list.tail === node2){
     //     console.log('append works!');
     // }
+
+    const numberList = new List<number>();
+    numberList.push(new Node(1));
+    numberList.push(new Node(2));
+    numberList.append(new Node(3));
+    numberList.insertAfter(new Node(4), numberList.head!);
+    console.log({ numberList: numberList.toArray() });
+
+    const personList = new List<Person>();
+    personList.push(new Node({ name: 'test', email: 'test@123.com' }));
+    personList.push(new Node({ name: 'test2', email: 'test@234.com' }));
+    console.log({ personList: personList.toArray() });
 }
 run();

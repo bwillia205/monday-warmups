@@ -1,14 +1,14 @@
 import { Node } from './Node';
 
-export class List {
-    head?: Node;
-    tail?: Node;
+export class List<T = unknown> {
+    head?: Node<T>;
+    tail?: Node<T>;
 
     get isEmpty() {
         return !this.head;
     }
 
-    push(node: Node) {
+    push(node: Node<T>) {
         if (this.isEmpty) {
             this.head = node;
             this.tail = node;
@@ -31,7 +31,7 @@ export class List {
         return node;
     }
 
-    append(node: Node) {
+    append(node: Node<T>) {
         if (this.isEmpty) {
             this.push(node);
             return;
@@ -64,7 +64,7 @@ export class List {
         return node;
     }
 
-    insertAfter(node: Node, target: Node) {
+    insertAfter(node: Node<T>, target: Node<T>) {
         let current = this.head;
         while (current) {
             if (current === target) {
@@ -80,9 +80,9 @@ export class List {
         //TODO - throw an error if function doesn't return
     }
 
-    toArray() {
-        const arr = [];
+    toArray(): T[] {
         let current = this.head;
+        const arr: T[] = [];
         while (current) {
             arr.push(current.value);
             current = current.next;

@@ -1,7 +1,7 @@
-export class Node {
-    value: unknown;
-    next?: Node;
-    constructor(value: unknown) {
+export class Node<T = unknown> {
+    value: T;
+    next?: Node<T>;
+    constructor(value: T) {
         this.value = value;
     }
 }
