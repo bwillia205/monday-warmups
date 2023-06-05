@@ -120,7 +120,7 @@ git checkout ts/converting-project warm-ups/intro-to-typescript.md
 
 Converting our JavaScript to TypeScript should be relatively simple but can also expose bugs and issues in our code that we may not have noticed before, so there may be some small refactors that we need to do to get our code to be happy in TypeScript.
 
-1. Now Lets convert the code to TypeScript and start working through some of the obvious issues. Move the code from the root of the directory into the `src` folder and change the file extensions to `.ts`. Inspect the files and see whee the errors are, don't fix them yet, instead we will see the errors by running build. `npm run build`
+1. Now Lets convert the code to TypeScript and start working through some of the obvious issues. Move the code from the root of the directory into the `src` folder and change the file extensions to `.ts`. Inspect the files and see where the errors are, don't fix them yet, instead we will see the errors by running build. `npm run build`
 
 2. Add types only as needed to resolve the type errors and start with code that doesn't use any other code. We will start with the `Node` class and then move on to the `LinkedList` class, then finally the `List.text.ts` file.
 
