@@ -146,3 +146,22 @@ git checkout ts/typescript-generics warm-ups/intro-to-typescript.md
 ```
 
 > If you have gotten behind or stuck or simply want to compare you can checkout the `ts/typescript-generics` branch or ([stackblitz](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/typescript-generics)) to get caught up. Do the necessary git commands to get your code to the same state as the branch.
+
+## TypeScript Generics
+
+Generics allow us to define part of the code that will have it's type defined at the time of reference by the developer. This is done by adding `<T>` after the name of the class or function. The `T` can be any letter or word, but `T` is the most common. The `T` can be used as a type in the class or function the `T` property can also have a default value by using the syntax `<T = number>` where number is the default. When the class or function is used the `T` will be replaced with the type that is passed in. This allows us to create a class or function that can be used with any type.
+
+1.  Open the `Node.ts` file and add a generic type to the class.
+2.  Open the `List.ts` file and add a generic type to the class, making sure to pass the generic type to the `Node` class.
+3.  Open the `List.test.ts` file and update the tests to use the generic type.
+4.  Experiment with defining different types when creating a new `List` and `Node` and see how it impacts your code.
+5.  Create a Person interface and use it as the generic type for the `List` and `Node` classes, then use some of the methods of the list. Has the intellisense changed?
+    1.  Interfaces
+
+If you have followed along checkout the next section of instructions by running:
+
+```bash
+git checkout ts/update-docker warm-ups/intro-to-typescript.md
+```
+
+> If you have gotten behind or stuck or simply want to compare you can checkout the `ts/update-docker` branch or ([stackblitz](https://stackblitz.com/github/joa-mos/monday-warmups/tree/ts/update-docker)) to get caught up. Do the necessary git commands to get your code to the same state as the branch.
