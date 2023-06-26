@@ -71,6 +71,20 @@ function createList(count: number) {
     return list;
 }
 
+class Person {
+    first: string = '';
+    last: string = '';
+
+    constructor(first: string, last: string) {
+        this.first = first;
+        this.last = last;
+    }
+
+    get fullName() {
+        return `${this.first} ${this.last}`;
+    }
+}
+
 function run() {
     //setup
     testPush();
@@ -82,5 +96,15 @@ function run() {
     // if(list.tail === node2){
     //     console.log('append works!');
     // }
+
+    const people = new List<Person>();
+
+    people.push(new Node(new Person('Eric', 'Wilson')));
+    people.push(new Node(new Person('Brandon', 'Williams')));
+
+    console.log(people);
+
+    const p = people.pop();
+    console.log(p?.value.fullName);
 }
 run();

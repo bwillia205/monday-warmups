@@ -1,8 +1,8 @@
-export class List {
-    head: Node | null = null;
-    tail: Node | null = null;
+export class List<T = unknown> {
+    head: Node<T> | null = null;
+    tail: Node<T> | null = null;
 
-    push(node: Node) {
+    push(node: Node<T>) {
         const emptyList = !this.head;
         if (emptyList) {
             this.head = node;
@@ -27,7 +27,7 @@ export class List {
         return node;
     }
 
-    append(node: Node) {
+    append(node: Node<T>) {
         const emptyList = !this.head;
         if (emptyList) {
             this.push(node);
@@ -63,7 +63,7 @@ export class List {
         return node;
     }
 
-    insertAfter(node: Node, target: Node) {
+    insertAfter(node: Node<T>, target: Node<T>) {
         let current = this.head;
         while (current !== null) {
             if (current === target) {
@@ -80,10 +80,10 @@ export class List {
     }
 }
 
-export class Node {
-    value: unknown;
-    next: Node | null = null;
-    constructor(value: unknown) {
+export class Node<T = unknown> {
+    value: T;
+    next: Node<T> | null = null;
+    constructor(value: T) {
         this.value = value;
     }
 }
