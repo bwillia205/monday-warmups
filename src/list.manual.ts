@@ -1,4 +1,4 @@
-import { List, Node } from './List';
+import { List, Node } from './list';
 
 function testPush() {
     const list = createList(0);
