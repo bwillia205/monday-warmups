@@ -78,6 +78,16 @@ export class List<T = unknown> {
         }
         //TODO - throw an error if function doesn't return
     }
+
+    toArray() {
+        const result: T[] = [];
+        let current = this.head;
+        while (current) {
+            result.push(current.value);
+            current = current.next;
+        }
+        return result;
+    }
 }
 
 export class Node<T = unknown> {

@@ -1,12 +1,12 @@
 import express from 'express';
-import { List, Node } from './List';
+import { List, Node } from './list';
 
 const router = express.Router();
 
 const list = new List();
 
 router.get('/', (req, res) => {
-    res.json(list);
+    res.json(list.toArray());
 });
 
 router.post('/', (req, res) => {

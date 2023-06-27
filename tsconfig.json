@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "composite": true,
         "target": "ES2022",
         "module": "CommonJS",
         "types": ["node", "express"],
@@ -14,5 +15,10 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["./src/**/*.ts"]
+    "include": ["./src/**/*.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ]
 }
