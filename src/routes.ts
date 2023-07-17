@@ -1,5 +1,12 @@
 import express from 'express';
 import { List, Node } from './list';
+import { readFile, writeFile } from 'fs/promises';
+const fileName = 'list.json';
+try {
+    readFile(fileName, 'utf8')
+} catch (error) {
+    writeFile(fileName, '[]', 'utf8');
+}
 
 const router = express.Router();
 
