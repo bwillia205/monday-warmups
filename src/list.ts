@@ -88,6 +88,12 @@ export class List<T = unknown> {
         }
         return result;
     }
+
+    fromArray(array: T[]) {
+        array.forEach((value) => {
+            this.append(new Node(value));
+        });
+    }
 }
 
 export class Node<T = unknown> {
